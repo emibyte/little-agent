@@ -18,6 +18,8 @@
             uv
 
             python3Packages.python-lsp-server
+            python3Packages.google-genai
+            python3Packages.python-dotenv
 
             # LSP server plugins of interest:
             python3Packages.pylsp-mypy
