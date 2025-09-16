@@ -18,6 +18,8 @@ def get_file_content(working_directory, file_path):
     try:
         with open(abs_path, "r") as f:
             file_contents = f.read(LIMIT_TO_TRUNCATE_FILE)
+            if os.path.getsize(abs_path) > LIMIT_TO_TRUNCATE_FILE:
+                file_contents += f'[...File "{abs_path}" truncated at 10000 characters]'
         return file_contents
     except Exception as e:
         return f"Unknown error reading file: {e}"
