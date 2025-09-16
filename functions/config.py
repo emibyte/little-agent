@@ -1,0 +1,1 @@
+LIMIT_TO_TRUNCATE_FILE = 10_000 # characters
