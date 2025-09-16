@@ -1,6 +1,7 @@
 .direnv
 .envrc
 .env
+calculator/lorem.txt
 
 .mypy_cache
 __pycache__
