@@ -11,7 +11,7 @@ def get_files_info(working_directory, directory="."):
         if os.path.isdir(path):
             for filename in os.listdir(path):
                 filepath = os.path.join(path, filename)
-                report.append(f"  -{filename}: file_size={os.path.getsize(filepath)} bytes, is_dir={os.path.isdir(filepath)}")
+                report.append(f"-{filename}: file_size={os.path.getsize(filepath)} bytes, is_dir={os.path.isdir(filepath)}")
             return "\n".join(report)
     except Exception as e:
         return f"Error while listing files: {e}"
