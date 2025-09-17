@@ -2,6 +2,7 @@
 .envrc
 .env
 calculator/lorem.txt
+calculator/pkg/morelorem.txt
 
 .mypy_cache
 __pycache__
