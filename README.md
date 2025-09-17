@@ -1,1 +1,1 @@
-# a little agent that can help you with your code
+a little agent that is probably not very helpful
