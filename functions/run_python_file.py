@@ -1,5 +1,29 @@
 import os
 from subprocess import run, CalledProcessError
+from google.genai import types
+
+schema_run_python_file = types.FunctionDeclaration(
+    name = "run_python_file",
+    description = "Run a python file via the python interpreter installed on the system and returns the output of the interpreter",
+    parameters = types.Schema(
+        type = types.Type.OBJECT,
+        properties = {
+            "file_path": types.Schema(
+                type = types.Type.STRING,
+                description = "The path of the file to run via the python interpreter, relative to the working directory. Has to be a file with the file-extension .py",
+            ),
+            "args": types.Schema(
+                type = types.Type.ARRAY,
+                items = types.Schema(
+                    type = types.Type.STRING,
+                    description = "Optional arguments to pass to the Python file.",
+                ),
+                description = "Optional arguments to pass to the Python file.",
+            ),
+        },
+        required = ["file_path"],
+    )
+)
 
 def run_python_file(working_directory, file_path, args=[]):
     path = os.path.join(working_directory, file_path)

@@ -1,5 +1,21 @@
 from functions.config import LIMIT_TO_TRUNCATE_FILE
+from google.genai import types
 import os
+
+schema_get_file_content = types.FunctionDeclaration(
+    name = "get_file_content",
+    description = "Get the contents of a specified file within the working directory.",
+    parameters = types.Schema(
+        type = types.Type.OBJECT,
+        properties = {
+            "file_path": types.Schema(
+                type = types.Type.STRING,
+                description = "The path of the file to get the content of, relative to the working directory.",
+            ),
+        },
+        required = ["file_path"],
+    )
+)
 
 def get_file_content(working_directory, file_path):
     file_contents = ""
