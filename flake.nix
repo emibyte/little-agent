@@ -14,7 +14,6 @@
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            bootdev-cli
             uv
 
             python3Packages.python-lsp-server

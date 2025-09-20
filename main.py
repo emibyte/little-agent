@@ -44,7 +44,7 @@ def main():
                         parts=[types.Part(function_response=function_call_result.parts[0].function_response)])
                 messages.append(content)
                 if verbose:
-                    print(f"{function_call_result.parts[0].function_response.response}")
+                    print(f" -> {function_call_result.parts[0].function_response.response}")
             except Exception as e:
                 print(f"Unknown error: {e}")
 
