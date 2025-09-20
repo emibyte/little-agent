@@ -14,7 +14,7 @@ available_functions = types.Tool(
     ]
 )
 
-def call_function(function_call_part: types.FunctionCall, verbose=False):
+def call_function(function_call_part: types.FunctionCall, verbose=False) -> types.Part.from_function_response:
     # NOTE: find a more proper way to build this dict
     function_dict = {
         "get_files_info": get_files_info,
